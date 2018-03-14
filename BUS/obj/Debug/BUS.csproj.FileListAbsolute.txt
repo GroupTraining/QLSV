@@ -1,0 +1,7 @@
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\BUS\bin\Debug\BUS.dll
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\BUS\bin\Debug\BUS.pdb
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\BUS\bin\Debug\DAL.dll
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\BUS\bin\Debug\DAL.pdb
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\BUS\obj\Debug\BUS.dll
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\BUS\obj\Debug\BUS.pdb

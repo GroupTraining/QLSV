@@ -1,0 +1,14 @@
+c:\users\hungzoro\documents\visual studio 2015\Projects\QLSV\QLSV\bin\Debug\QLSV.exe.config
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\bin\Debug\QLSV.exe
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\bin\Debug\QLSV.pdb
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\bin\Debug\BUS.dll
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\bin\Debug\DAL.dll
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\bin\Debug\BUS.pdb
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\bin\Debug\DAL.pdb
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.csprojResolveAssemblyReference.cache
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.GUI.Main.resources
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.Properties.Resources.resources
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.csproj.GenerateResource.Cache
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.exe
+C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.pdb
