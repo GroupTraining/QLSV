@@ -58,5 +58,45 @@ namespace BUS
 
             return 1;
         }
+        public object ThongKeDiemTheoMon(string text)
+        {
+            var hs = from u in data.HocSinhs
+                     from v in data.MonHocs
+                     from t in data.Diems
+                     from z in data.Lops
+                     where v.TenMon == text
+                     where v.MaMon == t.MaMon
+                     where u.MaLop == z.MaLop
+                     where t.MaSV == u.MaSV
+                     select new
+                     {
+                        Mã = u.MaSV,
+                        Tên = u.TenSV,
+                        Lớp = z.TenLop,
+                        Điểm = t.Diem1
+                     };
+            return hs;
+        }
+
+        public object ThongKeDiemTheoLop(string text)
+        {
+            var hs = from u in data.HocSinhs
+                     from v in data.MonHocs
+                     from t in data.Diems
+                     from z in data.Lops
+                     where z.TenLop == text
+                     where v.MaMon == t.MaMon
+                     where u.MaLop == z.MaLop
+                     where t.MaSV == u.MaSV
+                     select new
+                     {
+                         Mã = u.MaSV,
+                         Tên = u.TenSV,
+                         Lớp = z.TenLop,
+                         Điểm = t.Diem1
+                     };
+            return hs;
+        }
+
     }
 }
