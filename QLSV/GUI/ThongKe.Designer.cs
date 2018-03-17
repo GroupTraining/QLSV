@@ -32,23 +32,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.comboBox_diem = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboBox_hocluc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.btn_timkiemdiem = new DevComponents.DotNetBar.ButtonX();
-            this.btn_timkiemhl = new DevComponents.DotNetBar.ButtonX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.btn_timkiemdiemtheomon = new DevComponents.DotNetBar.ButtonX();
+            this.comboBox_môn = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dataGridViewX2 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.btn_timkiemdiemtheolop = new DevComponents.DotNetBar.ButtonX();
+            this.comboBox_lop = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.groupPanel1.SuspendLayout();
-            this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(294, 22);
+            this.labelX1.Location = new System.Drawing.Point(210, 22);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(195, 48);
             this.labelX1.TabIndex = 0;
@@ -60,12 +60,12 @@
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.dataGridViewX1);
-            this.groupPanel1.Controls.Add(this.btn_timkiemdiem);
-            this.groupPanel1.Controls.Add(this.comboBox_diem);
+            this.groupPanel1.Controls.Add(this.btn_timkiemdiemtheomon);
+            this.groupPanel1.Controls.Add(this.comboBox_môn);
             this.groupPanel1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanel1.Location = new System.Drawing.Point(12, 67);
+            this.groupPanel1.Location = new System.Drawing.Point(33, 64);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(364, 356);
+            this.groupPanel1.Size = new System.Drawing.Size(599, 268);
             // 
             // 
             // 
@@ -87,19 +87,60 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 1;
-            this.groupPanel1.Text = "Điểm";
+            this.groupPanel1.Text = "Môn";
+            // 
+            // dataGridViewX1
+            // 
+            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridViewX1.Location = new System.Drawing.Point(3, 53);
+            this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.ReadOnly = true;
+            this.dataGridViewX1.Size = new System.Drawing.Size(587, 184);
+            this.dataGridViewX1.TabIndex = 2;
+            // 
+            // btn_timkiemdiemtheomon
+            // 
+            this.btn_timkiemdiemtheomon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_timkiemdiemtheomon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_timkiemdiemtheomon.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timkiemdiemtheomon.Location = new System.Drawing.Point(365, 14);
+            this.btn_timkiemdiemtheomon.Name = "btn_timkiemdiemtheomon";
+            this.btn_timkiemdiemtheomon.Size = new System.Drawing.Size(83, 27);
+            this.btn_timkiemdiemtheomon.TabIndex = 1;
+            this.btn_timkiemdiemtheomon.Text = "Tìm kiếm";
+            this.btn_timkiemdiemtheomon.Click += new System.EventHandler(this.btn_timkiemdiemtheomon_Click);
+            // 
+            // comboBox_môn
+            // 
+            this.comboBox_môn.DisplayMember = "Text";
+            this.comboBox_môn.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_môn.FormattingEnabled = true;
+            this.comboBox_môn.ItemHeight = 21;
+            this.comboBox_môn.Location = new System.Drawing.Point(221, 14);
+            this.comboBox_môn.Name = "comboBox_môn";
+            this.comboBox_môn.Size = new System.Drawing.Size(138, 27);
+            this.comboBox_môn.TabIndex = 0;
             // 
             // groupPanel2
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.dataGridViewX2);
-            this.groupPanel2.Controls.Add(this.btn_timkiemhl);
-            this.groupPanel2.Controls.Add(this.comboBox_hocluc);
+            this.groupPanel2.Controls.Add(this.btn_timkiemdiemtheolop);
+            this.groupPanel2.Controls.Add(this.comboBox_lop);
             this.groupPanel2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanel2.Location = new System.Drawing.Point(426, 67);
+            this.groupPanel2.Location = new System.Drawing.Point(33, 338);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(364, 356);
+            this.groupPanel2.Size = new System.Drawing.Size(599, 257);
             // 
             // 
             // 
@@ -121,71 +162,12 @@
             this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 1;
-            this.groupPanel2.Text = "Học lực";
-            // 
-            // comboBox_diem
-            // 
-            this.comboBox_diem.DisplayMember = "Text";
-            this.comboBox_diem.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox_diem.FormattingEnabled = true;
-            this.comboBox_diem.ItemHeight = 21;
-            this.comboBox_diem.Location = new System.Drawing.Point(130, 14);
-            this.comboBox_diem.Name = "comboBox_diem";
-            this.comboBox_diem.Size = new System.Drawing.Size(121, 27);
-            this.comboBox_diem.TabIndex = 0;
-            // 
-            // comboBox_hocluc
-            // 
-            this.comboBox_hocluc.DisplayMember = "Text";
-            this.comboBox_hocluc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox_hocluc.FormattingEnabled = true;
-            this.comboBox_hocluc.ItemHeight = 21;
-            this.comboBox_hocluc.Location = new System.Drawing.Point(118, 14);
-            this.comboBox_hocluc.Name = "comboBox_hocluc";
-            this.comboBox_hocluc.Size = new System.Drawing.Size(121, 27);
-            this.comboBox_hocluc.TabIndex = 0;
-            // 
-            // btn_timkiemdiem
-            // 
-            this.btn_timkiemdiem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_timkiemdiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_timkiemdiem.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_timkiemdiem.Location = new System.Drawing.Point(257, 14);
-            this.btn_timkiemdiem.Name = "btn_timkiemdiem";
-            this.btn_timkiemdiem.Size = new System.Drawing.Size(83, 27);
-            this.btn_timkiemdiem.TabIndex = 1;
-            this.btn_timkiemdiem.Text = "Tìm kiếm";
-            // 
-            // btn_timkiemhl
-            // 
-            this.btn_timkiemhl.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_timkiemhl.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_timkiemhl.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_timkiemhl.Location = new System.Drawing.Point(245, 14);
-            this.btn_timkiemhl.Name = "btn_timkiemhl";
-            this.btn_timkiemhl.Size = new System.Drawing.Size(83, 27);
-            this.btn_timkiemhl.TabIndex = 1;
-            this.btn_timkiemhl.Text = "Tìm kiếm";
-            // 
-            // dataGridViewX1
-            // 
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(4, 53);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(351, 272);
-            this.dataGridViewX1.TabIndex = 2;
+            this.groupPanel2.Text = "Lớp";
             // 
             // dataGridViewX2
             // 
+            this.dataGridViewX2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewX2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewX2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -198,22 +180,47 @@
             this.dataGridViewX2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX2.Location = new System.Drawing.Point(4, 53);
             this.dataGridViewX2.Name = "dataGridViewX2";
-            this.dataGridViewX2.Size = new System.Drawing.Size(351, 272);
+            this.dataGridViewX2.ReadOnly = true;
+            this.dataGridViewX2.Size = new System.Drawing.Size(586, 173);
             this.dataGridViewX2.TabIndex = 2;
+            // 
+            // btn_timkiemdiemtheolop
+            // 
+            this.btn_timkiemdiemtheolop.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_timkiemdiemtheolop.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_timkiemdiemtheolop.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timkiemdiemtheolop.Location = new System.Drawing.Point(365, 20);
+            this.btn_timkiemdiemtheolop.Name = "btn_timkiemdiemtheolop";
+            this.btn_timkiemdiemtheolop.Size = new System.Drawing.Size(83, 27);
+            this.btn_timkiemdiemtheolop.TabIndex = 1;
+            this.btn_timkiemdiemtheolop.Text = "Tìm kiếm";
+            this.btn_timkiemdiemtheolop.Click += new System.EventHandler(this.btn_timkiemdiemtheolop_Click);
+            // 
+            // comboBox_lop
+            // 
+            this.comboBox_lop.DisplayMember = "Text";
+            this.comboBox_lop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_lop.FormattingEnabled = true;
+            this.comboBox_lop.ItemHeight = 21;
+            this.comboBox_lop.Location = new System.Drawing.Point(221, 20);
+            this.comboBox_lop.Name = "comboBox_lop";
+            this.comboBox_lop.Size = new System.Drawing.Size(138, 27);
+            this.comboBox_lop.TabIndex = 0;
             // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 435);
+            this.ClientSize = new System.Drawing.Size(665, 607);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.labelX1);
             this.Name = "ThongKe";
-            this.Text = "ThongKe";
+            this.Text = " Thống kê điểm sinh viên";
+            this.Load += new System.EventHandler(this.ThongKe_Load);
             this.groupPanel1.ResumeLayout(false);
-            this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX2)).EndInit();
             this.ResumeLayout(false);
 
@@ -224,11 +231,11 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
-        private DevComponents.DotNetBar.ButtonX btn_timkiemdiem;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBox_diem;
+        private DevComponents.DotNetBar.ButtonX btn_timkiemdiemtheomon;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBox_môn;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX2;
-        private DevComponents.DotNetBar.ButtonX btn_timkiemhl;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBox_hocluc;
+        private DevComponents.DotNetBar.ButtonX btn_timkiemdiemtheolop;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBox_lop;
     }
 }
