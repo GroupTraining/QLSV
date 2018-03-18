@@ -12,21 +12,21 @@ using BUS;
 
 namespace QLSV.GUI
 {
-    public partial class ThemGV : Form
+    public partial class ThemHS : Form
     {
         Bus bus = new Bus();
-        public ThemGV()
+        public ThemHS()
         {
             InitializeComponent();
-            dataGridViewX1.DataSource = bus.getData1();
-        }
-        
-        private void dataGridViewX1_CellContentClick(object sender, DataGridViewCellEventArgs e)//hiển thị giáo viên vừa thêm
-        {
-            
+            dataGridView2.DataSource = bus.getData2();
         }
 
-        private void buttonThem_Click(object sender, EventArgs e)//Thêm giáo viên
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonThem_Click(object sender, EventArgs e)
         {
             string gt = "";
             if (radioNam.Checked == true)
@@ -39,10 +39,10 @@ namespace QLSV.GUI
             }
             try
             {
-                bus.addTeacher(txtMaGV.Text, txtHoTen.Text, gt, dtpBirthday.Text, txtSDT.Text, txtMaMon.Text);
-                dataGridViewX1.Refresh();
-                dataGridViewX1.DataSource = bus.getData1();
-                
+                bus.addStudent(textMasv.Text, textTensv.Text, gt, dateBirth.Text, textMalop.Text);
+                dataGridView2.Refresh();
+                dataGridView2.DataSource = bus.getData2();
+
                 MessageBox.Show("Đã thêm thành công");
             }
             catch (Exception ex)
@@ -50,8 +50,6 @@ namespace QLSV.GUI
                 Console.Write(ex);
                 MessageBox.Show("Nhập liệu sai!!!");
             }
-
-
         }
     }
 }

@@ -28,6 +28,24 @@ namespace BUS
 
             return database;
         }
+
+        public object getData2()
+        {
+            var database = from u in data.HocSinhs
+                           from v in data.Lops
+                           where u.MaLop == v.MaLop
+                           select new
+                           {
+                               Masv = u.MaSV,
+                               Tensv = u.TenSV,
+                               NS = u.NgaySinh,
+                               GT = u.Gioitinh,
+                               MaLop = u.MaLop
+                           };
+
+            return database;
+        }
+
         public object addTeacher(string magv, string hoten, string gt, string ns, string sdt, string mamon)
         {
             GiaoVien gv = new GiaoVien();
@@ -58,6 +76,37 @@ namespace BUS
 
             return 1;
         }
+
+        public object addStudent(string masv, string tensv, string gt, string ns, string malop)
+        {
+            HocSinh hs = new HocSinh();
+            Lop lop = data.Lops.Single(a => a.MaLop == malop);
+
+            hs.MaSV = masv;
+            hs.TenSV = tensv;
+
+            if (gt == "Nam")
+            {
+                hs.Gioitinh = false;
+            }
+            if (gt == "Nữ")
+            {
+                hs.Gioitinh = true;
+            }
+            hs.NgaySinh = DateTime.ParseExact(ns, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            if (lop != null)
+            {
+                hs.MaLop = malop;
+            }
+
+
+            data.HocSinhs.InsertOnSubmit(hs);
+            data.SubmitChanges();
+
+
+            return 1;
+        }
+
         public object ThongKeDiemTheoMon(string text)
         {
             var hs = from u in data.HocSinhs
