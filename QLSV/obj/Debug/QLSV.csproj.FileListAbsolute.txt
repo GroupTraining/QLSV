@@ -12,3 +12,6 @@ C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV
 C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.csproj.GenerateResource.Cache
 C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.exe
 C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\QLSV\obj\Debug\QLSV.pdb
+E:\github\QLSV\QLSV\bin\Debug\QLSV.exe.config
+E:\github\QLSV\QLSV\obj\Debug\QLSV.exe
+E:\github\QLSV\QLSV\obj\Debug\QLSV.pdb

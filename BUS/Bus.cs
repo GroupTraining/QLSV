@@ -107,6 +107,11 @@ namespace BUS
             return 1;
         }
 
+        public int editStudent(string masv, string tensv, string gt, string ns, string malop)
+        {
+            return 0;
+        }
+
         public object ThongKeDiemTheoMon(string text)
         {
             var hs = from u in data.HocSinhs
