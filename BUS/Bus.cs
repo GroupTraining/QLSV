@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -109,7 +110,70 @@ namespace BUS
 
         public int editStudent(string masv, string tensv, string gt, string ns, string malop)
         {
-            return 0;
+            SinhVien sv = data.SinhViens.Single(a => a.MaSV == masv);
+            int solop = 0;
+            if(malop == "")
+            {
+                solop = 1;
+            }
+            else
+            {
+                solop = (from lp in data.Lops where lp.MaLop == malop select lp).Count();
+            }
+            if(solop > 0)
+            {
+                if(tensv == "")
+                {
+                    sv.TenSV = null;
+                }
+                else
+                {
+                    sv.TenSV = tensv;
+                }
+                if (gt == "")
+                {
+                    sv.Gioitinh = null;
+                }
+                else if(gt == "Nam")
+                {
+                    sv.Gioitinh = true;
+                }
+                else
+                {
+                    sv.Gioitinh = false;
+                }
+                if (ns == "")
+                {
+                    sv.NgaySinh = null;
+                }
+                else
+                {
+                    sv.NgaySinh = Convert.ToDateTime(ns);
+                }
+                if (malop == "")
+                {
+                    sv.MaLop = null;
+                }
+                else
+                {
+                    sv.MaLop = malop;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã lớp không tồn tại, nhập lại mã lớp!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                return 0;
+            }
+            try
+            {
+                data.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            return 1;
         }
 
         public object ThongKeDiemTheoMon(string text)
