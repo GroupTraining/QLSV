@@ -156,14 +156,14 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(0, 169);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(477, 200);
+            this.dataGridView2.Size = new System.Drawing.Size(599, 200);
             this.dataGridView2.TabIndex = 12;
             // 
             // ThemHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 369);
+            this.ClientSize = new System.Drawing.Size(599, 369);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.buttonThem);
             this.Controls.Add(this.radioNu);
