@@ -26,8 +26,7 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8T21MBV\\SQLEXPRESS;Initial Catalog=sinhvienPC;Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=sinhvienPC;Integrated Security=True")]
         public string sinhvienPCConnectionString {
             get {
                 return ((string)(this["sinhvienPCConnectionString"]));
