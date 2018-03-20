@@ -19,6 +19,8 @@ namespace QLSV.GUI
         {
             InitializeComponent();
             dataGridView2.DataSource = bus.getData2();
+            //
+
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,8 +42,9 @@ namespace QLSV.GUI
             try
             {
                 bus.addStudent(textMasv.Text, textTensv.Text, gt, dateBirth.Text, textMalop.Text);
-                dataGridView2.Refresh();
                 dataGridView2.DataSource = bus.getData2();
+                dataGridView2.Refresh();
+                
 
                 MessageBox.Show("Đã thêm thành công");
             }
