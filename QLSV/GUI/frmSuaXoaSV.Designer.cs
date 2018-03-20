@@ -79,22 +79,24 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(448, 179);
+            this.button2.Location = new System.Drawing.Point(344, 174);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Cancel";
+            this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(319, 179);
+            this.button1.Location = new System.Drawing.Point(187, 174);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "OK";
+            this.button1.Text = "Sửa";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // groupBox1
             // 
@@ -117,9 +119,10 @@
             // 
             // dtpNs
             // 
+            this.dtpNs.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNs.Location = new System.Drawing.Point(307, 87);
             this.dtpNs.Name = "dtpNs";
-            this.dtpNs.Size = new System.Drawing.Size(153, 20);
+            this.dtpNs.Size = new System.Drawing.Size(100, 20);
             this.dtpNs.TabIndex = 11;
             // 
             // cbGt
@@ -215,6 +218,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(638, 235);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // MaSV
             // 
@@ -234,14 +238,14 @@
             // NgaySinh
             // 
             this.NgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.DataPropertyName = "NS";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
             // 
             // GioiTinh
             // 
             this.GioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.DataPropertyName = "GT";
             this.GioiTinh.HeaderText = "Giới tính";
             this.GioiTinh.Name = "GioiTinh";
             // 

@@ -176,6 +176,26 @@ namespace BUS
             return 1;
         }
 
+        public object deleteStudent(string masv)
+        {
+            int sosv = (from sv in data.SinhViens where sv.MaSV == masv select sv).Count();
+            if (sosv == 1)
+            {
+                SinhVien nv4 = data.SinhViens.Single(a => a.MaSV == masv);
+                data.SinhViens.DeleteOnSubmit(nv4);
+            }
+            try
+            {
+                data.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return 1;
+            return 1;
+        }
+
         public object ThongKeDiemTheoMon(string text)
         {
             var hs = from u in data.HocSinhs
