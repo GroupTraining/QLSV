@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DAL;
 using System.Globalization;
 
+
 namespace BUS
 {
     public class Bus
@@ -40,10 +41,10 @@ namespace BUS
                            //where t.MaMon == z.MaMon
                            select new
                            {
-                               Masv = u.MaSV,
-                               Tensv = u.TenSV,
-                               NS = u.NgaySinh,
-                               GT = u.Gioitinh,
+                               MaSV = u.MaSV,
+                               HoTen = u.TenSV,
+                               NgaySinh = u.NgaySinh,
+                               GioiTinh = u.Gioitinh,
                                MaLop = u.MaLop,
                               /* TenMon = z.TenMon,
                                Diem = t.Diem1,*/
@@ -156,7 +157,7 @@ namespace BUS
 
         public int editStudent(string masv, string tensv, string gt, string ns, string malop)
         {
-            SinhVien sv = data.SinhViens.Single(a => a.MaSV == masv);
+            HocSinh sv = data.HocSinhs.Single(a => a.MaSV == masv);
             int solop = 0;
             if (malop == "")
             {
@@ -207,7 +208,7 @@ namespace BUS
             }
             else
             {
-                MessageBox.Show("Mã lớp không tồn tại, nhập lại mã lớp!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //MessageBox.Show("Mã lớp không tồn tại, nhập lại mã lớp!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 return 0;
             }
             try
@@ -216,7 +217,8 @@ namespace BUS
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                //MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
             return 1;
@@ -224,11 +226,11 @@ namespace BUS
 
         public object deleteStudent(string masv)
         {
-            int sosv = (from sv in data.SinhViens where sv.MaSV == masv select sv).Count();
+            int sosv = (from sv in data.HocSinhs where sv.MaSV == masv select sv).Count();
             if (sosv == 1)
             {
-                SinhVien nv4 = data.SinhViens.Single(a => a.MaSV == masv);
-                data.SinhViens.DeleteOnSubmit(nv4);
+                HocSinh nv4 = data.HocSinhs.Single(a => a.MaSV == masv);
+                data.HocSinhs.DeleteOnSubmit(nv4);
             }
             try
             {
@@ -236,9 +238,8 @@ namespace BUS
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return 1;
             return 1;
         }
 
@@ -310,6 +311,28 @@ namespace BUS
                      };
             return hs;
         }
+        public object SearchByKey(string GiaTri)
+        {
+           // DateTime dt =
+   //teTime.ParseExact(GiaTri, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            var tk = from u in data.HocSinhs
+                     select new
+                     {
+                         MaSV = u.MaSV,
+                         HoTen = u.TenSV,
+                         NgaySinh = u.NgaySinh,
+                         GioiTinh = u.Gioitinh,
+                         MaLop = u.MaLop
 
+                     } into timkiemSV
+                     where timkiemSV.MaSV.Contains(GiaTri)
+                         || timkiemSV.HoTen.Contains(GiaTri)
+                        // || timkiemSV.NgaySinh.Contains(dt)
+                         //||  timkiemSV.GioiTinh.Contains(InGiaTri)
+                         || timkiemSV.MaLop.Contains(GiaTri)
+                     select timkiemSV;
+            return tk;
+        }
     }
 }
+       

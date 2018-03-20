@@ -1,6 +1,6 @@
-C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\DAL\bin\Debug\DAL.dll.config
-C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\DAL\bin\Debug\DAL.dll
-C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\DAL\bin\Debug\DAL.pdb
-C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\DAL\obj\Debug\DAL.dll
-C:\Users\HungZoro\Documents\Visual Studio 2015\Projects\QLSV\DAL\obj\Debug\DAL.pdb
+C:\Users\GiangHTT\Documents\GitHub\TTN\BTLTTN\QuanLyNhanSu\QLSV\DAL\bin\Debug\DAL.dll.config
+C:\Users\GiangHTT\Documents\GitHub\TTN\BTLTTN\QuanLyNhanSu\QLSV\DAL\bin\Debug\DAL.dll
+C:\Users\GiangHTT\Documents\GitHub\TTN\BTLTTN\QuanLyNhanSu\QLSV\DAL\bin\Debug\DAL.pdb
+C:\Users\GiangHTT\Documents\GitHub\TTN\BTLTTN\QuanLyNhanSu\QLSV\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\GiangHTT\Documents\GitHub\TTN\BTLTTN\QuanLyNhanSu\QLSV\DAL\obj\Debug\DAL.dll
+C:\Users\GiangHTT\Documents\GitHub\TTN\BTLTTN\QuanLyNhanSu\QLSV\DAL\obj\Debug\DAL.pdb

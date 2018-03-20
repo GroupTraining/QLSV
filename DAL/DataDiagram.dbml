@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sinhvienPC" Class="DataDiagramDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-8T21MBV\SQLEXPRESS;Initial Catalog=sinhvienPC;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="sinhvienPCConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=sinhvienPC;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="sinhvienPCConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Diem" Member="Diems">
     <Type Name="Diem">
-      <Column Name="MaDiem" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaSV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="MaMon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaSV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaMon" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Diem" Member="Diem1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HocSinh_Diem" Member="HocSinh" ThisKey="MaSV" OtherKey="MaSV" Type="HocSinh" IsForeignKey="true" />
       <Association Name="MonHoc_Diem" Member="MonHoc" ThisKey="MaMon" OtherKey="MaMon" Type="MonHoc" IsForeignKey="true" />
-      <Association Name="SinhVien_Diem" Member="SinhVien" ThisKey="MaSV" OtherKey="MaSV" Type="SinhVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.GiaoVien" Member="GiaoViens">
@@ -17,8 +16,19 @@
       <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Gioitinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="SoDT" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="BoMon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="GiaoVien_Lop" Member="Lops" ThisKey="MaGV" OtherKey="MaGV" Type="Lop" />
+      <Column Name="MaMon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="GiaoVien_Lop" Member="Lops" ThisKey="MaGV" OtherKey="MaGVCN" Type="Lop" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HocSinh" Member="HocSinhs">
+    <Type Name="HocSinh">
+      <Column Name="MaSV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gioitinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="HocSinh_Diem" Member="Diems" ThisKey="MaSV" OtherKey="MaSV" Type="Diem" />
+      <Association Name="Lop_HocSinh" Member="Lop" ThisKey="MaLop" OtherKey="MaLop" Type="Lop" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Lop" Member="Lops">
@@ -26,9 +36,9 @@
       <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLop" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Khoa" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="MaGV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="Lop_SinhVien" Member="SinhViens" ThisKey="MaLop" OtherKey="MaLop" Type="SinhVien" />
-      <Association Name="GiaoVien_Lop" Member="GiaoVien" ThisKey="MaGV" OtherKey="MaGV" Type="GiaoVien" IsForeignKey="true" />
+      <Column Name="MaGVCN" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Lop_HocSinh" Member="HocSinhs" ThisKey="MaLop" OtherKey="MaLop" Type="HocSinh" />
+      <Association Name="GiaoVien_Lop" Member="GiaoVien" ThisKey="MaGVCN" OtherKey="MaGV" Type="GiaoVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.MonHoc" Member="MonHocs">
@@ -36,17 +46,6 @@
       <Column Name="MaMon" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="MonHoc_Diem" Member="Diems" ThisKey="MaMon" OtherKey="MaMon" Type="Diem" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SinhVien" Member="SinhViens">
-    <Type Name="SinhVien">
-      <Column Name="MaSV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenSV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Gioitinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MaLop" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="SinhVien_Diem" Member="Diems" ThisKey="MaSV" OtherKey="MaSV" Type="Diem" />
-      <Association Name="Lop_SinhVien" Member="Lop" ThisKey="MaLop" OtherKey="MaLop" Type="Lop" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
