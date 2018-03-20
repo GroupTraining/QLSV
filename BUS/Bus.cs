@@ -154,6 +154,94 @@ namespace BUS
             return 1;
         }
 
+        public int editStudent(string masv, string tensv, string gt, string ns, string malop)
+        {
+            SinhVien sv = data.SinhViens.Single(a => a.MaSV == masv);
+            int solop = 0;
+            if (malop == "")
+            {
+                solop = 1;
+            }
+            else
+            {
+                solop = (from lp in data.Lops where lp.MaLop == malop select lp).Count();
+            }
+            if (solop > 0)
+            {
+                if (tensv == "")
+                {
+                    sv.TenSV = null;
+                }
+                else
+                {
+                    sv.TenSV = tensv;
+                }
+                if (gt == "")
+                {
+                    sv.Gioitinh = null;
+                }
+                else if (gt == "Nam")
+                {
+                    sv.Gioitinh = true;
+                }
+                else
+                {
+                    sv.Gioitinh = false;
+                }
+                if (ns == "")
+                {
+                    sv.NgaySinh = null;
+                }
+                else
+                {
+                    sv.NgaySinh = Convert.ToDateTime(ns);
+                }
+                if (malop == "")
+                {
+                    sv.MaLop = null;
+                }
+                else
+                {
+                    sv.MaLop = malop;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã lớp không tồn tại, nhập lại mã lớp!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                return 0;
+            }
+            try
+            {
+                data.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            return 1;
+        }
+
+        public object deleteStudent(string masv)
+        {
+            int sosv = (from sv in data.SinhViens where sv.MaSV == masv select sv).Count();
+            if (sosv == 1)
+            {
+                SinhVien nv4 = data.SinhViens.Single(a => a.MaSV == masv);
+                data.SinhViens.DeleteOnSubmit(nv4);
+            }
+            try
+            {
+                data.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return 1;
+            return 1;
+        }
+
         public object addMark(string msv, string mamon, string mark)
         {
             Diem diem = new Diem();
