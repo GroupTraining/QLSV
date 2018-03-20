@@ -33,15 +33,46 @@ namespace BUS
         {
             var database = from u in data.HocSinhs
                            from v in data.Lops
+                           //from t in data.Diems
+                          // from z in data.MonHocs
                            where u.MaLop == v.MaLop
+                          // where u.MaSV == t.MaSV
+                           //where t.MaMon == z.MaMon
                            select new
                            {
                                Masv = u.MaSV,
                                Tensv = u.TenSV,
                                NS = u.NgaySinh,
                                GT = u.Gioitinh,
-                               MaLop = u.MaLop
-                           };
+                               MaLop = u.MaLop,
+                              /* TenMon = z.TenMon,
+                               Diem = t.Diem1,*/
+
+                           }
+
+
+                           ;
+
+            return database;
+        }
+
+        public object getData3()
+        {
+            var database =  from u in data.HocSinhs
+                           from t in data.Diems
+                           from z in data.MonHocs
+                           where t.MaMon == z.MaMon
+                           where t.MaSV == u.MaSV
+                           select new
+                           { MaSinhVien = t.MaSV,
+                           TenSinhVien = u.TenSV,
+                               TenMon = z.TenMon,
+                               Diem = t.Diem1,
+
+                           }
+
+
+                           ;
 
             return database;
         }
@@ -81,7 +112,6 @@ namespace BUS
         {
             HocSinh hs = new HocSinh();
             Lop lop = data.Lops.Single(a => a.MaLop == malop);
-
             hs.MaSV = masv;
             hs.TenSV = tensv;
 
@@ -94,13 +124,59 @@ namespace BUS
                 hs.Gioitinh = true;
             }
             hs.NgaySinh = DateTime.ParseExact(ns, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            
             if (lop != null)
             {
                 hs.MaLop = malop;
             }
 
+            /*if (diem != null)
+            {
+                diem.MaMon = "m01";
+                diem.Diem1 = Int32.Parse(toan);
+            }
 
+            if (van != null)
+            {
+                diem.MaMon = "m02";
+                diem.Diem1 = Int32.Parse(van);
+            }
+
+            if (anh != null)
+            {
+                diem.MaMon = "m03";
+                diem.Diem1 = Int32.Parse(anh);
+            }*/
             data.HocSinhs.InsertOnSubmit(hs);
+            data.SubmitChanges();
+
+
+            return 1;
+        }
+
+        public object addMark(string msv, string mamon, string mark)
+        {
+            Diem diem = new Diem();
+            HocSinh hs= data.HocSinhs.Single(a => a.MaSV == msv);
+
+            diem.MaSV = msv;
+           
+                diem.MaMon = mamon;
+                diem.Diem1 = Int32.Parse(mark);
+            /*}
+
+            if (van != null)
+            {
+                diem.MaMon = "m02";
+                diem.Diem1 = Int32.Parse(van);
+            }
+
+            if (anh != null)
+            {
+                diem.MaMon = "m03";
+                diem.Diem1 = Int32.Parse(anh);
+            }*/
+            data.Diems.InsertOnSubmit(diem);
             data.SubmitChanges();
 
 

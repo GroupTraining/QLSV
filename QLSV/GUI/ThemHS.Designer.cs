@@ -65,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 82);
+            this.label3.Location = new System.Drawing.Point(25, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 2;
@@ -95,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(295, 25);
+            this.label4.Location = new System.Drawing.Point(25, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 6;
@@ -104,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(295, 56);
+            this.label5.Location = new System.Drawing.Point(25, 133);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 7;
@@ -112,7 +112,9 @@
             // 
             // dateBirth
             // 
-            this.dateBirth.Location = new System.Drawing.Point(368, 25);
+            this.dateBirth.CustomFormat = "dd/MM/yyyy";
+            this.dateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateBirth.Location = new System.Drawing.Point(111, 101);
             this.dateBirth.Name = "dateBirth";
             this.dateBirth.Size = new System.Drawing.Size(158, 20);
             this.dateBirth.TabIndex = 8;
@@ -120,7 +122,7 @@
             // radioNam
             // 
             this.radioNam.AutoSize = true;
-            this.radioNam.Location = new System.Drawing.Point(368, 56);
+            this.radioNam.Location = new System.Drawing.Point(111, 129);
             this.radioNam.Name = "radioNam";
             this.radioNam.Size = new System.Drawing.Size(47, 17);
             this.radioNam.TabIndex = 9;
@@ -131,7 +133,7 @@
             // radioNu
             // 
             this.radioNu.AutoSize = true;
-            this.radioNu.Location = new System.Drawing.Point(441, 56);
+            this.radioNu.Location = new System.Drawing.Point(187, 129);
             this.radioNu.Name = "radioNu";
             this.radioNu.Size = new System.Drawing.Size(39, 17);
             this.radioNu.TabIndex = 10;
@@ -141,7 +143,7 @@
             // 
             // buttonThem
             // 
-            this.buttonThem.Location = new System.Drawing.Point(228, 114);
+            this.buttonThem.Location = new System.Drawing.Point(311, 69);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(93, 26);
             this.buttonThem.TabIndex = 11;
@@ -152,16 +154,16 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 152);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 169);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(563, 208);
+            this.dataGridView2.Size = new System.Drawing.Size(477, 200);
             this.dataGridView2.TabIndex = 12;
             // 
             // ThemHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 358);
+            this.ClientSize = new System.Drawing.Size(478, 369);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.buttonThem);
             this.Controls.Add(this.radioNu);
