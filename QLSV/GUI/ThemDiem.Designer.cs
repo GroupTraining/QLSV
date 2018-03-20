@@ -38,6 +38,7 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -132,11 +133,23 @@
             this.linkLabel1.Text = "Danh Sách Học Sinh";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(346, 30);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(59, 13);
+            this.linkLabel2.TabIndex = 28;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Bảng Điểm";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // ThemDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 324);
+            this.ClientSize = new System.Drawing.Size(545, 324);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.buttonAdd);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
