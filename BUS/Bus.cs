@@ -62,7 +62,8 @@ namespace BUS
             {
                 gv.Gioitinh = true;
             }
-            gv.NgaySinh = DateTime.ParseExact(ns, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            // gv.NgaySinh = DateTime.ParseExact(ns, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            gv.NgaySinh = DateTime.Parse(ns, new CultureInfo("en-US", true));
             gv.SoDT = sdt;
             if (mh != null)
             {
@@ -76,7 +77,43 @@ namespace BUS
 
             return 1;
         }
+        public object editTeacher(string ma, string ten, string ns, string gt, string sdt, string mon_hoc)
+        {
+            GiaoVien gv = data.GiaoViens.Single(a => a.MaGV == ma);
+            gv.MaGV = ma;
+            gv.TenGV = ten;
+            // gv.NgaySinh = DateTime.ParseExact(ns, "dd/mm/yyyy", CultureInfo.InstalledUICulture);
+            gv.NgaySinh = DateTime.Parse(ns, new CultureInfo("en-US", true));
+            if (gt == "Nam")
+            {
+                gv.Gioitinh = false;
+            }
+            if(gt == "Nữ")
+            {
+                gv.Gioitinh = true;
+            }
+            gv.SoDT = sdt;
+            gv.MaMon = mon_hoc;
 
+            data.SubmitChanges();
+            return 1;
+
+        }
+        public object DeleteTeacher(string ma)
+        {
+            var gv1 = from b in data.Lops
+                      where b.MaGVCN == ma
+                      select b;
+
+            data.Lops.DeleteAllOnSubmit(gv1);
+            var gv = from a in data.GiaoViens
+                     where a.MaGV == ma
+                     select a;
+
+            data.GiaoViens.DeleteAllOnSubmit(gv); 
+            data.SubmitChanges();
+            return 1;
+        }
         public object addStudent(string masv, string tensv, string gt, string ns, string malop)
         {
             HocSinh hs = new HocSinh();
